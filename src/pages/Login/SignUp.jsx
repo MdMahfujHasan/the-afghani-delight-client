@@ -48,8 +48,10 @@ const SignUp = () => {
 
         createUser(email, password)
             .then(result => {
-                const createdUser = result.user;
                 setSuccess('User has been created successfully!');
+                result.user.displayName = name;
+                result.user.photoURL = photo;
+                setUser(result.user);
                 navigate('/');
                 form.reset();
             })
@@ -77,6 +79,7 @@ const SignUp = () => {
             .then(result => {
                 setSuccess('GitHub sign in successful!');
                 setError('');
+                setUser(result.user);
                 navigate('/');
             })
             .catch(error => {
@@ -146,9 +149,6 @@ const SignUp = () => {
                                     className="input input-bordered"
                                     required
                                 />
-                                <label className="label">
-                                    <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                                </label>
                             </div>
 
                             <div className="form-control mt-6">
