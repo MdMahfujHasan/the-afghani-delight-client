@@ -4,7 +4,7 @@ import { FaGithub } from 'react-icons/fa';
 import Navbar from '../Shared/Navbar';
 import { HeartIcon } from '@heroicons/react/24/solid';
 import { AuthContext } from '../../providers/AuthProvider';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const { signIn, googleSingIn, githubSignIn, setUser } = useContext(AuthContext);
@@ -107,9 +107,18 @@ const Login = () => {
                             </div>
 
                             <div className="form-control mt-6">
-                                <input className='btn btn-accent' type="submit" value="Sign Up" />
+                                <input className='btn btn-accent' type="submit" value="Login" />
                             </div>
                         </form>
+
+                        <p className='text-center mb-1'>
+                            <small>
+                                Don't have an account? <Link
+                                    className='text-blue-500 hover:underline hover:underline-offset-1'
+                                    to="/sign-up">Sign Up
+                                </Link>
+                            </small>
+                        </p>
 
                         <button
                             onClick={handleGoogleSignIn}

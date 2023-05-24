@@ -4,12 +4,18 @@ import Login from "../pages/Login/Login";
 import SignUp from "../pages/Login/SignUp";
 import Chefs from "../pages/Chefs/Chefs";
 import Recipes from '../pages/Chefs/Recipes';
+import Blogs from "../pages/Shared/Blogs";
+import NotFound from "../pages/Shared/NotFound";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Main></Main>,
         loader: () => fetch('http://localhost:5000/chefs')
+    },
+    {
+        path: "blogs",
+        element: <Blogs></Blogs>
     },
     {
         path: "chef/:id",
@@ -23,6 +29,10 @@ const router = createBrowserRouter([
     {
         path: "sign-up",
         element: <SignUp></SignUp>
+    },
+    {
+        path: "*",
+        element: <NotFound></NotFound>
     }
 ]);
 

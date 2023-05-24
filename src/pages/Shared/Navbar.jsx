@@ -6,6 +6,7 @@ import userDefault from '../../assets/user_default.png';
 import { FiLogOut, FiHelpCircle, FiSettings } from 'react-icons/fi';
 import { RiFeedbackLine } from 'react-icons/ri';
 import { FaRegMoon, FaRegUser } from 'react-icons/fa';
+import { BsHeart } from 'react-icons/bs';
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -14,35 +15,35 @@ const Navbar = () => {
     const handleSignOut = () => {
         logOut()
             .then(() => {
-                navigate('/sign-up');
+                navigate('/login');
             })
     }
     return (
         <div className="navbar bg-teal-500 flex justify-around text-white">
-            <Link to="/" className="btn btn-ghost normal-case text-xl">The Afghani Delight</Link>
-            <div>
-                <Link to="/recipes" className='btn btn-ghost'>Recipes</Link>
-                <Link to="/login" className='btn btn-ghost'>Login</Link>
-                <Link to="/sign-up" className='btn btn-ghost'>Sign Up</Link>
+            <Link to="/" className="btn btn-ghost normal-case text-xl"><BsHeart className='me-1' /> The Afghani Delight</Link>
+            <div className='font-semibold'>
+                <ActiveLink to="/" className='btn btn-ghost'>Home</ActiveLink>
+                <ActiveLink to="/blogs" className='btn btn-ghost'>Blogs</ActiveLink>
+                <ActiveLink to="/recipes" className='btn btn-ghost'>Recipes</ActiveLink>
+                <ActiveLink to="/login" className='btn btn-ghost'>Login</ActiveLink>
+                <ActiveLink to="/sign-up" className='btn btn-ghost'>Sign Up</ActiveLink>
             </div>
             <div className="flex-none">
-                <div className={user && `border-2 rounded-full border-green-700`}>
-                    <div className="dropdown dropdown-end">
-                        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                            <div className="w-10 rounded-full">
-                                <img src={user?.photoURL ? user.photoURL : userDefault} />
-                            </div>
-                        </label>
-                        {user && <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                            <li><a><FaRegUser />{user?.displayName}</a></li>
-                            <li><a><FiSettings />Settings and privacy</a></li>
-                            <li><a><FiHelpCircle />Help and support</a></li>
-                            <li><a><FaRegMoon />Display and accessibility</a></li>
-                            <li><a><RiFeedbackLine /> Give feedback</a></li>
-                            <li onClick={handleSignOut}><a><FiLogOut /> Log Out</a></li>
-                        </ul>}
-                    </div>
-                </div>
+                {user && <div title={user.displayName} className="dropdown dropdown-end">
+                    <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                        <div className="w-10 rounded-full">
+                            <img src={user?.photoURL ? user.photoURL : userDefault} />
+                        </div>
+                    </label>
+                    <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                        <li><a><FaRegUser />{user?.displayName}</a></li>
+                        <li><a><FiSettings />Settings and privacy</a></li>
+                        <li><a><FiHelpCircle />Help and support</a></li>
+                        <li><a><FaRegMoon />Display and accessibility</a></li>
+                        <li><a><RiFeedbackLine /> Give feedback</a></li>
+                        <li onClick={handleSignOut}><a><FiLogOut /> Log Out</a></li>
+                    </ul>
+                </div>}
             </div>
         </div>
     );

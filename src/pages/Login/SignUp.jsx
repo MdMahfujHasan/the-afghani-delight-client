@@ -5,9 +5,8 @@ import { AuthContext } from '../../providers/AuthProvider';
 // import { ToastContainer, toast } from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css';
 import Navbar from '../Shared/Navbar';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { HeartIcon } from '@heroicons/react/24/solid';
-
 
 const SignUp = () => {
     const { createUser, googleSingIn, githubSignIn, setUser } = useContext(AuthContext);
@@ -108,13 +107,12 @@ const SignUp = () => {
                                     name='photo'
                                     placeholder="Photo URL"
                                     className="input input-bordered"
-                                    required
                                 />
                             </div>
 
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Name</span>
+                                    <span className="label-text">Name <span className='text-rose-500'>*</span></span>
                                 </label>
                                 <input
                                     type="text"
@@ -127,7 +125,7 @@ const SignUp = () => {
 
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Email</span>
+                                    <span className="label-text">Email <span className='text-rose-500'>*</span></span>
                                 </label>
                                 <input
                                     type="email"
@@ -140,7 +138,7 @@ const SignUp = () => {
 
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Password</span>
+                                    <span className="label-text">Password <span className='text-rose-500'>*</span></span>
                                 </label>
                                 <input
                                     type="password"
@@ -155,6 +153,15 @@ const SignUp = () => {
                                 <input className='btn btn-accent' type="submit" value="Sign Up" />
                             </div>
                         </form>
+
+                        <p className='text-center mb-1'>
+                            <small>
+                                Already have an account? <Link
+                                    className='text-blue-500 hover:underline hover:underline-offset-1'
+                                    to="/login">Login
+                                </Link>
+                            </small>
+                        </p>
 
                         <button
                             onClick={handleGoogleSignIn}

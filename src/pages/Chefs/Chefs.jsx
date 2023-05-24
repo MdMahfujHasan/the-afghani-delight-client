@@ -15,7 +15,7 @@ const Chefs = ({ chef }) => {
                     <p>Recipes: {recipes}</p>
                     <p>Likes: {likes}k</p>
                     <div className="card-actions">
-                        <Link to={`/chef/${id}`}><button className="btn btn-primary">View Recipes</button></Link>
+                        <Link to={`/chef/${id}`}><button className="btn btn-info">View Recipes</button></Link>
                     </div>
                 </div>
             </div>
