@@ -12,7 +12,7 @@ const ActiveLink = ({ to, children }) => {
     const notActive = {
         color: 'white',
         marginRight: '30px'
-    };
+    }
     return (
         <NavLink
             to={to}
