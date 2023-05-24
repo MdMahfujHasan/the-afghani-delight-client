@@ -1,12 +1,12 @@
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCWovvgcCZ9LuYexwCBkC7ikRO1E0dMoUE",
-    authDomain: "the-afghani-delight.firebaseapp.com",
-    projectId: "the-afghani-delight",
-    storageBucket: "the-afghani-delight.appspot.com",
-    messagingSenderId: "985283812407",
-    appId: "1:985283812407:web:99def9663ff26d585573b2"
+    apiKey: import.meta.env.VITE_API_KEY,
+    authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+    projectId: import.meta.env.VITE_PROJECT_ID,
+    storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+    messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
+    appId: import.meta.env.VITE_APP_ID
 };
 
 const app = initializeApp(firebaseConfig);
