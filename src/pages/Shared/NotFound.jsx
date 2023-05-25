@@ -4,6 +4,7 @@ import food404 from '../../assets/food_404.png';
 import Navbar from './Navbar';
 import { Link } from 'react-router-dom';
 import { BiArrowBack } from 'react-icons/bi';
+import Footer from './Footer';
 
 const NotFound = () => {
     BiArrowBack
@@ -17,6 +18,7 @@ const NotFound = () => {
                 <img src={food404} alt="food photo" />
             </div>
             <Link className='flex justify-center' to='/'><button className='btn btn-primary'><BiArrowBack className='text-lg me-1' />Go Back</button></Link>
+            <Footer></Footer>
         </>
     );
 };
