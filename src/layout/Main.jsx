@@ -6,6 +6,7 @@ import Chefs from '../pages/Chefs/Chefs';
 import { TbChefHat } from 'react-icons/tb';
 import Banner from '../pages/Home/Banner';
 import Cities from '../pages/Home/Cities';
+import DownloadApp from '../pages/Home/DownloadApp';
 
 const Main = () => {
     const chefs = useLoaderData()
@@ -29,6 +30,7 @@ const Main = () => {
                 </div>
             </div>
             <Cities></Cities>
+            <DownloadApp></DownloadApp>
             <Outlet></Outlet>
             <Footer></Footer>
         </div>
