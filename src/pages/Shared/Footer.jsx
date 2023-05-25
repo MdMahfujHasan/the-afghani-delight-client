@@ -42,10 +42,10 @@ const Footer = () => {
             <div>
                 <h4 className='text-xl font-bold'>Follow The Afghani Delight</h4>
                 <div className='flex my-4'>
-                    <FaFacebookSquare />
-                    <FaTwitter />
-                    <FaYoutube />
-                    <FaInstagram />
+                    <FaFacebookSquare className='text-xl text-blue-700 hover:cursor-pointer' />
+                    <FaTwitter className='text-xl text-sky-500 mx-3 hover:cursor-pointer' />
+                    <FaYoutube className='text-xl text-red-600 hover:cursor-pointer' />
+                    <FaInstagram className='text-xl text-rose-500 ms-3 hover:cursor-pointer' />
                 </div>
                 <img className='rounded-lg h-64 w-64' src={footer} alt="cooked chicken photo" />
                 <p className='mt-1 mb-2'><small>© 2023 The Afghani Delight Food Network</small></p>

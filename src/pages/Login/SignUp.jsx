@@ -7,6 +7,7 @@ import { AuthContext } from '../../providers/AuthProvider';
 import Navbar from '../Shared/Navbar';
 import { Link, useNavigate } from 'react-router-dom';
 import { HeartIcon } from '@heroicons/react/24/solid';
+import food from '../../assets/sign_up_food.jpg';
 
 const SignUp = () => {
     const { createUser, googleSingIn, githubSignIn, setUser } = useContext(AuthContext);
@@ -88,9 +89,10 @@ const SignUp = () => {
             <Navbar></Navbar>
             <div className="min-h-screen bg-base-200">
                 <div className="hero-content flex-col lg:flex-row container mx-auto">
-                    <div className="text-center">
+                    <div className="text-center flex flex-col items-center">
                         <h1 className="text-6xl text-teal-500 font-bold">The Afghani Delight</h1>
                         <p className='p-6 text-xl'>Indulge in exquisite flavors and authentic Afghan hospitality at the Afghani Delight - Where culinary delights bring hearts together! {heartIcon}</p>
+                        <img className='w-2/3 h-96 rounded-lg' src={food} alt="varieties of food" />
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
 

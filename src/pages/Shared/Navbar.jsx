@@ -19,9 +19,9 @@ const Navbar = () => {
             })
     }
     return (
-        <div className="navbar bg-teal-500 flex justify-around text-white">
+        <div className="navbar bg-teal-500 justify-around text-white flex flex-col md:flex-row">
             <Link to="/" className="btn btn-ghost normal-case text-xl"><BsHeart className='me-1' /> The Afghani Delight</Link>
-            <div className='font-semibold'>
+            <div className='font-semibold flex flex-col md:flex-row'>
                 <ActiveLink to="/" className='btn btn-ghost'>Home</ActiveLink>
                 <ActiveLink to="/blogs" className='btn btn-ghost'>Blogs</ActiveLink>
                 <ActiveLink to="/recipes" className='btn btn-ghost'>Recipes</ActiveLink>
