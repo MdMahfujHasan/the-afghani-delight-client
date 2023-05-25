@@ -5,6 +5,7 @@ import { Outlet, useLoaderData } from 'react-router-dom';
 import Chefs from '../pages/Chefs/Chefs';
 import { TbChefHat } from 'react-icons/tb';
 import Banner from '../pages/Home/Banner';
+import Cities from '../pages/Home/Cities';
 
 const Main = () => {
     const chefs = useLoaderData()
@@ -14,9 +15,9 @@ const Main = () => {
             <Header></Header>
             <Banner></Banner>
             <div className='mt-12'>
-                <h2 className='text-center text-5xl'>
+                <h2 className='text-center text-4xl'>
                     <span
-                        className='border-l-8 border-teal-500 pl-2'>
+                        className='border-l-4 border-teal-500 pl-2'>
                         Our Chefs
                         <TbChefHat className='inline mb-3 text-teal-500' />
                     </span>
@@ -27,6 +28,7 @@ const Main = () => {
                     }
                 </div>
             </div>
+            <Cities></Cities>
             <Outlet></Outlet>
             <Footer></Footer>
         </div>
