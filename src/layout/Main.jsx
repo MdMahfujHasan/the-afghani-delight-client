@@ -4,6 +4,7 @@ import Footer from '../pages/Shared/Footer';
 import { Outlet, useLoaderData } from 'react-router-dom';
 import Chefs from '../pages/Chefs/Chefs';
 import { TbChefHat } from 'react-icons/tb';
+import Banner from '../pages/Home/Banner';
 
 const Main = () => {
     const chefs = useLoaderData()
@@ -11,6 +12,7 @@ const Main = () => {
     return (
         <div>
             <Header></Header>
+            <Banner></Banner>
             <div className='mt-12'>
                 <h2 className='text-center text-5xl'>
                     <span

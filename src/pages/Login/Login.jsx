@@ -4,7 +4,7 @@ import { FaGithub } from 'react-icons/fa';
 import Navbar from '../Shared/Navbar';
 import { HeartIcon } from '@heroicons/react/24/solid';
 import { AuthContext } from '../../providers/AuthProvider';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const { signIn, googleSingIn, githubSignIn, setUser } = useContext(AuthContext);
@@ -12,6 +12,8 @@ const Login = () => {
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
     const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
     const heartIcon = <HeartIcon className="h-6 w-6 text-rose-500 inline" />
 
     const handleSignIn = event => {
@@ -28,7 +30,7 @@ const Login = () => {
             .then(result => {
                 setSuccess('Logged in successfully!');
                 setError('');
-                navigate('/');
+                navigate(from, { replace: true })
                 form.reset();
             })
             .catch(error => {
@@ -43,7 +45,6 @@ const Login = () => {
                 setSuccess('Google sign in successful!');
                 setError('');
                 setUser(result.user);
-                navigate('/');
             })
             .catch(error => {
                 setError(error.message);
@@ -57,7 +58,6 @@ const Login = () => {
                 setSuccess('GitHub sign in successful!');
                 setError('');
                 setUser(result.user);
-                navigate('/');
             })
             .catch(error => {
                 setError(error.message);

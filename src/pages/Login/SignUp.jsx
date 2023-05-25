@@ -51,7 +51,6 @@ const SignUp = () => {
                 result.user.displayName = name;
                 result.user.photoURL = photo;
                 setUser(result.user);
-                navigate('/');
                 form.reset();
             })
             .catch(error => {
@@ -65,7 +64,6 @@ const SignUp = () => {
                 setSuccess('Google sign in successful!');
                 setError('');
                 setUser(result.user);
-                navigate('/');
             })
             .catch(error => {
                 setError(error.message);
@@ -79,7 +77,6 @@ const SignUp = () => {
                 setSuccess('GitHub sign in successful!');
                 setError('');
                 setUser(result.user);
-                navigate('/');
             })
             .catch(error => {
                 setError(error.message);
