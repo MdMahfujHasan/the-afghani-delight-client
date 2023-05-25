@@ -25,8 +25,10 @@ const Navbar = () => {
                 <ActiveLink to="/" className='btn btn-ghost'>Home</ActiveLink>
                 <ActiveLink to="/blogs" className='btn btn-ghost'>Blogs</ActiveLink>
                 <ActiveLink to="/recipes" className='btn btn-ghost'>Recipes</ActiveLink>
-                <ActiveLink to="/login" className='btn btn-ghost'>Login</ActiveLink>
-                <ActiveLink to="/sign-up" className='btn btn-ghost'>Sign Up</ActiveLink>
+                {!user && <>
+                    <ActiveLink to="/login" className='btn btn-ghost'>Login</ActiveLink>
+                    <ActiveLink to="/sign-up" className='btn btn-ghost'>Sign Up</ActiveLink>
+                </>}
             </div>
             <div className="flex-none">
                 {user && <div title={user.displayName} className="dropdown dropdown-end">
