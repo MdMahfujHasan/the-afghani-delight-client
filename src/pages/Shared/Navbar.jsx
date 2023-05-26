@@ -39,12 +39,12 @@ const Navbar = () => {
                         </div>
                     </label>
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                        <li className='text-teal-500'><Link to="/profile"><FaRegUser />{user?.displayName}</Link ></li>
-                        <li><a><FiSettings />Settings and privacy</a></li>
-                        <li><a><FiHelpCircle />Help and support</a></li>
-                        <li><a><FaRegMoon />Display and accessibility</a></li>
-                        <li><a><RiFeedbackLine /> Give feedback</a></li>
-                        <li onClick={handleSignOut}><a><FiLogOut /> Log Out</a></li>
+                        <li className='bg-slate-600 font-bold text-teal-500'><Link to="/profile"><FaRegUser />{user?.displayName}</Link ></li>
+                        <li className='bg-slate-500 font-semibold'><a><FiSettings />Settings and privacy</a></li>
+                        <li className='bg-slate-500 font-semibold'><a><FiHelpCircle />Help and support</a></li>
+                        <li className='bg-slate-500 font-semibold'><a><FaRegMoon />Display and accessibility</a></li>
+                        <li className='bg-slate-500 font-semibold'><a><RiFeedbackLine /> Give feedback</a></li>
+                        <li className='bg-slate-500 font-semibold' onClick={handleSignOut}><a><FiLogOut /> Log Out</a></li>
                     </ul>
                 </div>}
             </div>
