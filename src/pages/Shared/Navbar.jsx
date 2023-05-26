@@ -7,6 +7,7 @@ import { FiLogOut, FiHelpCircle, FiSettings } from 'react-icons/fi';
 import { RiFeedbackLine } from 'react-icons/ri';
 import { FaRegMoon, FaRegUser } from 'react-icons/fa';
 import { BsHeart } from 'react-icons/bs';
+import { BiUserCircle } from 'react-icons/bi';
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -38,7 +39,7 @@ const Navbar = () => {
                         </div>
                     </label>
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                        <li><a><FaRegUser />{user?.displayName}</a></li>
+                        <li className='text-teal-500'><Link to="/profile"><FaRegUser />{user?.displayName}</Link ></li>
                         <li><a><FiSettings />Settings and privacy</a></li>
                         <li><a><FiHelpCircle />Help and support</a></li>
                         <li><a><FaRegMoon />Display and accessibility</a></li>

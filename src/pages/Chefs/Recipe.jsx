@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { AiFillStar } from 'react-icons/ai';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { RiHeartAddLine } from 'react-icons/ri';
 
 const Recipe = ({ recipe }) => {
     const { name, img, description, ingredients, instruction, method, rating } = recipe;
@@ -17,11 +18,13 @@ const Recipe = ({ recipe }) => {
             <div className="card-body">
                 <h2 className="card-title text-5xl font-extralight text-teal-500">{name}</h2>
                 <div className='flex items-center text-2xl'>
-                    <span>Rating: {rating}</span>
+                    <span>{rating}</span>
                     <AiFillStar className='text-yellow-500' />
                 </div>
                 <p className='text-lg font-light'>{description}</p>
-                <p><button disabled={disable} onClick={handleFavourite} className='btn btn-error'>Favourite</button></p>
+                <p><button disabled={disable} onClick={handleFavourite} className='btn btn-error'>
+                    <RiHeartAddLine className='text-lg mr-1' />
+                    Favourite</button></p>
                 <ToastContainer
                     position="top-center"
                     autoClose={5000}
