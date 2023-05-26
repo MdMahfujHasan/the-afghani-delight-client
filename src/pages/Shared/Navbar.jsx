@@ -21,7 +21,7 @@ const Navbar = () => {
     }
     return (
         <div className="navbar bg-teal-500 justify-around text-white flex flex-col md:flex-row">
-            <Link to="/" className="btn btn-ghost normal-case text-xl"><BsHeart className='me-1' /> The Afghani Delight</Link>
+            <Link to="/" className="btn btn-ghost normal-case text-xl">The Afghani Delight <BsHeart className='ms-1' /></Link>
             <div className='font-semibold flex flex-col md:flex-row'>
                 <ActiveLink to="/" className='btn btn-ghost'>Home</ActiveLink>
                 <ActiveLink to="/blogs" className='btn btn-ghost'>Blogs</ActiveLink>
