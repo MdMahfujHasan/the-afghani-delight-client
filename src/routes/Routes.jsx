@@ -8,6 +8,7 @@ import Blogs from "../pages/Shared/Blogs";
 import NotFound from "../pages/Shared/NotFound";
 import PrivateRoute from "./PrivateRoute";
 import UserProfile from "../pages/User/UserProfile";
+import AllRecipes from "../pages/Chefs/AllRecipes";
 
 const router = createBrowserRouter([
     {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
         path: "chef/:id",
         element: <PrivateRoute><Recipes></Recipes></PrivateRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/chef/${params.id}`)
+    },
+    {
+        path: "recipes",
+        element: <AllRecipes></AllRecipes>
     },
     {
         path: "profile",

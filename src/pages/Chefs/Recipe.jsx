@@ -14,7 +14,7 @@ const Recipe = ({ recipe }) => {
     }
     return (
         <div className="bg-base-100">
-            <figure><img src={img} alt="Food" /></figure>
+            <figure><img className='w-96 h-96 rounded' src={img} alt="Food" /></figure>
             <div className="card-body">
                 <h2 className="card-title text-5xl font-extralight text-teal-500">{name}</h2>
                 <div className='flex items-center text-2xl'>
@@ -24,7 +24,8 @@ const Recipe = ({ recipe }) => {
                 <p className='text-lg font-light'>{description}</p>
                 <p><button disabled={disable} onClick={handleFavourite} className='btn btn-error'>
                     <RiHeartAddLine className='text-lg mr-1' />
-                    Favourite</button></p>
+                    Favourite</button>
+                </p>
                 <ToastContainer
                     position="top-center"
                     autoClose={5000}

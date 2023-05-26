@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import banner from '../../assets/banner.jpg';
 import { GiMeal } from 'react-icons/gi';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../providers/AuthProvider';
 
 const Banner = () => {
+    const { user } = useContext(AuthContext);
     const bannerFont = {
         fontFamily: 'Lobster, cursive'
     }
@@ -13,8 +15,10 @@ const Banner = () => {
             <div className="hero-content text-center text-neutral-content">
                 <div style={bannerFont}>
                     <h1 className="mb-4 text-3xl sm:text-4xl md:text-5xl font-extrabold">Immerse yourself in the rich heritage of Afghan cuisine, where every bite tells a story of tradition and flavor, at The Afghani Delight. <GiMeal className='text-7xl inline' /></h1>
-                    <p className="mb-5"></p>
-                    <Link to="/sign-up"><button className="btn btn-accent">Let's Get Started </button></Link>
+                    <Link
+                        to={!user ? "/login" : "/"}>
+                        <button className="btn btn-accent">Let's Get Started</button>
+                    </Link>
                 </div>
             </div>
         </div>

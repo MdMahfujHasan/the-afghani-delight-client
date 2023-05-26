@@ -23,7 +23,7 @@ const Recipes = () => {
                             <span className='flex'><b className='mr-1'>Likes:</b>{likes}k</span>
                         </div>
                     </div>
-                    <div className='grid grid-cols-1 gap-8'>
+                    <div className='grid grid-cols-1 gap-8 mt-10'>
                         <h2 className='text-center text-4xl'><span className='border-l-4 border-teal-500 pl-2'>Chef Recipes</span> <GiChickenOven className='inline mb-3 text-teal-500' /></h2>
                         {
                             recipe.map(r => <Recipe key={r.rating} recipe={r}></Recipe>)
