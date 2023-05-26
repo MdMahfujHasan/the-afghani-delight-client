@@ -2,8 +2,6 @@ import React, { useContext, useState } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { FaGithub } from 'react-icons/fa';
 import { AuthContext } from '../../providers/AuthProvider';
-// import { ToastContainer, toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
 import Navbar from '../Shared/Navbar';
 import { Link, useNavigate } from 'react-router-dom';
 import { HeartIcon } from '@heroicons/react/24/solid';

@@ -45,6 +45,7 @@ const Login = () => {
                 setSuccess('Google sign in successful!');
                 setError('');
                 setUser(result.user);
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 setError(error.message);
@@ -58,6 +59,7 @@ const Login = () => {
                 setSuccess('GitHub sign in successful!');
                 setError('');
                 setUser(result.user);
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 setError(error.message);
