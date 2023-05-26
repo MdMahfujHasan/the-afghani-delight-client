@@ -4,6 +4,8 @@ import Navbar from '../Shared/Navbar';
 import Footer from '../Shared/Footer';
 
 const UserProfile = () => {
+    const [error, setError] = useState('');
+    const [success, setSuccess] = useState('');
     const { user, userProfileUpdate } = useContext(AuthContext);
     // console.log(user);
     const [hide, setHide] = useState(true);
@@ -15,6 +17,11 @@ const UserProfile = () => {
         userProfileUpdate(name, photoURL)
             .then(() => {
                 toast('User profile has been updated.');
+                setError('');
+            })
+            .catch(error => {
+                setError(error.message);
+                setSuccess('');
             })
     }
     return (
@@ -43,6 +50,8 @@ const UserProfile = () => {
                     </div>
                     <input className='btn btn-secondary mt-3' type="submit" value="Update" />
                 </form>
+                <p className='text-center text-rose-500 pb-2'>{error}</p>
+                <p className='text-center text-green-500 pb-2'>{success}</p>
             </div>
             <Footer></Footer>
         </>
