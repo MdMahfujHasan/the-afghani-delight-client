@@ -14,7 +14,7 @@ const router = createBrowserRouter([
     {
         path: "/",
         element: <Main></Main>,
-        loader: () => fetch('http://localhost:5000/chefs')
+        loader: () => fetch('https://the-afghani-delight-server.vercel.app/chefs')
     },
     {
         path: "blogs",
@@ -23,7 +23,7 @@ const router = createBrowserRouter([
     {
         path: "chef/:id",
         element: <PrivateRoute><Recipes></Recipes></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/chef/${params.id}`)
+        loader: ({ params }) => fetch(`https://the-afghani-delight-server.vercel.app/chef/${params.id}`)
     },
     {
         path: "recipes",
