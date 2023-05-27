@@ -14,7 +14,7 @@ const router = createBrowserRouter([
     {
         path: "/",
         element: <Main></Main>,
-        loader: () => fetch('https://the-afghani-delight-server-mdmahfujhasan.vercel.app/chefs')
+        loader: () => fetch('https://the-afghani-delight-server.vercel.app/chefs')
     },
     {
         path: "blogs",
@@ -23,18 +23,18 @@ const router = createBrowserRouter([
     {
         path: "chef/:id",
         element: <PrivateRoute><Recipes></Recipes></PrivateRoute>,
-        loader: ({ params }) => fetch(`https://the-afghani-delight-server-mdmahfujhasan.vercel.app/chef/${params.id}`)
+        loader: ({ params }) => fetch(`https://the-afghani-delight-server.vercel.app/chef/${params.id}`)
         // https://the-afghani-delight-server.vercel.app/
         // https://the-afghani-delight-server-mdmahfujhasan.vercel.app/
     },
     {
         path: "recipes",
-        loader: () => fetch('https://the-afghani-delight-server-mdmahfujhasan.vercel.app/recipe'),
+        loader: () => fetch('https://the-afghani-delight-server.vercel.app/recipe'),
         element: <AllRecipes></AllRecipes>
     },
     {
         path: "recipe/:id",
-        loader: ({ params }) => fetch(`https://the-afghani-delight-server-mdmahfujhasan.vercel.app/recipe/${params.id}`),
+        loader: ({ params }) => fetch(`https://the-afghani-delight-server.vercel.app/recipe/${params.id}`),
         element: <ViewRecipe></ViewRecipe>
     },
     {
