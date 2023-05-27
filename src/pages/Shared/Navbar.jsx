@@ -7,7 +7,6 @@ import { FiLogOut, FiHelpCircle, FiSettings } from 'react-icons/fi';
 import { RiFeedbackLine } from 'react-icons/ri';
 import { FaRegMoon, FaRegUser } from 'react-icons/fa';
 import { BsHeart } from 'react-icons/bs';
-import { BiUserCircle } from 'react-icons/bi';
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -26,13 +25,14 @@ const Navbar = () => {
                 <ActiveLink to="/" className='btn btn-ghost'>Home</ActiveLink>
                 <ActiveLink to="/blogs" className='btn btn-ghost'>Blogs</ActiveLink>
                 <ActiveLink to="/recipes" className='btn btn-ghost'>Recipes</ActiveLink>
+                <ActiveLink to="/profile" className='btn btn-ghost'>Profile</ActiveLink>
                 {!user && <>
                     <ActiveLink to="/login" className='btn btn-ghost'>Login</ActiveLink>
                     <ActiveLink to="/sign-up" className='btn btn-ghost'>Sign Up</ActiveLink>
                 </>}
             </div>
             <div className="flex-none">
-                {user && <div title={user.displayName} className="dropdown dropdown-end">
+                {user && <div title={user?.displayName} className="dropdown dropdown-end">
                     <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                         <div className="w-10 rounded-full">
                             <img src={user?.photoURL ? user.photoURL : userDefault} />

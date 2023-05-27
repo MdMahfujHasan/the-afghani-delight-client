@@ -8,7 +8,7 @@ import NotFound from "../pages/Shared/NotFound";
 import PrivateRoute from "./PrivateRoute";
 import UserProfile from "../pages/User/UserProfile";
 import AllRecipes from "../pages/Chefs/AllRecipes";
-import ViewRecipe from "../pages/Chefs/VIewRecipe";
+import ViewRecipe from "../pages/Chefs/ViewRecipe";
 
 const router = createBrowserRouter([
     {
@@ -24,8 +24,6 @@ const router = createBrowserRouter([
         path: "chef/:id",
         element: <PrivateRoute><Recipes></Recipes></PrivateRoute>,
         loader: ({ params }) => fetch(`https://the-afghani-delight-server.vercel.app/chef/${params.id}`)
-        // https://the-afghani-delight-server.vercel.app/
-        // https://the-afghani-delight-server-mdmahfujhasan.vercel.app/
     },
     {
         path: "recipes",
@@ -39,7 +37,7 @@ const router = createBrowserRouter([
     },
     {
         path: "profile",
-        element: <UserProfile></UserProfile>
+        element: <PrivateRoute><UserProfile></UserProfile></PrivateRoute>
     },
     {
         path: "login",

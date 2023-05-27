@@ -176,19 +176,6 @@ const SignUp = () => {
 
                         <p className='text-center text-rose-500 pb-2'>{error}</p>
                         <p className='text-center text-green-500 pb-2'>{success}</p>
-
-                        {/* <ToastContainer
-                            position="top-center"
-                            autoClose={3000}
-                            hideProgressBar={false}
-                            newestOnTop={false}
-                            closeOnClick
-                            rtl={false}
-                            pauseOnFocusLoss
-                            draggable
-                            pauseOnHover
-                            theme="dark"
-                        /> */}
                     </div>
                 </div>
             </div>

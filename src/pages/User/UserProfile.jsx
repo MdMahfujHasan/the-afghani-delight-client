@@ -4,6 +4,7 @@ import Navbar from '../Shared/Navbar';
 import Footer from '../Shared/Footer';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { MdDarkMode, MdLightMode } from 'react-icons/md';
 
 const UserProfile = () => {
     const { user, userProfileUpdate, resetPassword } = useContext(AuthContext);
@@ -39,7 +40,7 @@ const UserProfile = () => {
             <div className='flex justify-evenly'>
                 <p className='text-center mt-4 mb-4'><button onClick={() => setHide(!hide)} className='btn btn-primary btn-xs'>Edit Profile</button></p>
                 <p className='text-center mt-4 mb-4'><button onClick={() => setHide2(!hide2)} className='btn btn-primary btn-xs'>Reset Password</button></p>
-                <button onClick={() => setDark(!dark)} className='btn btn-xs mt-4'>{dark ? 'Light' : 'Dark'}</button>
+                <button onClick={() => setDark(!dark)} className='btn btn-sm mt-4'>{dark ? <MdLightMode /> : <MdDarkMode />}</button>
             </div>
             <div className={`flex justify-center items-center gap-20 ${dark ? 'bg-slate-700 text-white' : ''}`}>
                 <div>

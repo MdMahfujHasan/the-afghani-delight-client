@@ -4,7 +4,6 @@ import Footer from '../pages/Shared/Footer';
 import { Outlet, useLoaderData } from 'react-router-dom';
 import Chefs from '../pages/Chefs/Chefs';
 import { TbChefHat } from 'react-icons/tb';
-// import Banner from '../pages/Home/Banner';
 import Cities from '../pages/Home/Cities';
 import DownloadApp from '../pages/Home/DownloadApp';
 
