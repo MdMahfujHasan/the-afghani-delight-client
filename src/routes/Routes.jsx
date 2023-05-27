@@ -34,8 +34,8 @@ const router = createBrowserRouter([
     },
     {
         path: "recipe/:id",
-        loader: ({ params }) => fetch(`https://the-afghani-delight-server.vercel.app/recipe/${params.id}`),
-        element: <ViewRecipe></ViewRecipe>
+        element: <PrivateRoute><ViewRecipe></ViewRecipe></PrivateRoute>,
+        loader: ({ params }) => fetch(`https://the-afghani-delight-server.vercel.app/recipe/${params.id}`)
     },
     {
         path: "profile",
