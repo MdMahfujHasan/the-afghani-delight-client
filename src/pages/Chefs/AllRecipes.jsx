@@ -4,8 +4,10 @@ import { useLoaderData } from 'react-router-dom';
 import AllRecipe from './AllRecipe';
 import { SlBookOpen } from 'react-icons/sl'
 import Footer from '../Shared/Footer';
+import useTitle from '../../hooks/useTitle';
 
 const AllRecipes = () => {
+    useTitle('Recipes');
     const allRecipes = useLoaderData();
     return (
         <div>

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import ActiveLink from './ActiveLink';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
@@ -7,9 +7,10 @@ import { FiLogOut, FiHelpCircle, FiSettings } from 'react-icons/fi';
 import { RiFeedbackLine } from 'react-icons/ri';
 import { FaRegMoon, FaRegUser } from 'react-icons/fa';
 import { BsHeart } from 'react-icons/bs';
+import { MdDarkMode, MdLightMode } from 'react-icons/md';
 
 const Navbar = () => {
-    const { user, logOut } = useContext(AuthContext);
+    const { user, logOut, dark, setDark } = useContext(AuthContext);
     const navigate = useNavigate();
 
     const handleSignOut = () => {
@@ -25,11 +26,12 @@ const Navbar = () => {
                 <ActiveLink to="/" className='btn btn-ghost'>Home</ActiveLink>
                 <ActiveLink to="/blogs" className='btn btn-ghost'>Blogs</ActiveLink>
                 <ActiveLink to="/recipes" className='btn btn-ghost'>Recipes</ActiveLink>
-                <ActiveLink to="/profile" className='btn btn-ghost'>Profile</ActiveLink>
+                <ActiveLink to="/about" className='btn btn-ghost'>About</ActiveLink>
                 {!user && <>
                     <ActiveLink to="/login" className='btn btn-ghost'>Login</ActiveLink>
                     <ActiveLink to="/sign-up" className='btn btn-ghost'>Sign Up</ActiveLink>
                 </>}
+                <Link onClick={() => setDark(!dark)}>{dark ? <MdDarkMode /> : <MdLightMode />}</Link>
             </div>
             <div className="flex-none">
                 {user && <div title={user?.displayName} className="dropdown dropdown-end">

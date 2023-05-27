@@ -6,8 +6,10 @@ import Chefs from '../pages/Chefs/Chefs';
 import { TbChefHat } from 'react-icons/tb';
 import Cities from '../pages/Home/Cities';
 import DownloadApp from '../pages/Home/DownloadApp';
+import useTitle from '../hooks/useTitle';
 
 const Main = () => {
+    useTitle('Home');
     const chefs = useLoaderData()
     // console.log(chefs);
     const Banner = lazy(() => import('../pages/Home/Banner'));

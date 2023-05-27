@@ -3,8 +3,10 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import { PDFExport } from '@progress/kendo-react-pdf';
 import { BsDownload } from 'react-icons/bs';
+import useTitle from '../../hooks/useTitle';
 
 const Blogs = () => {
+    useTitle('Blogs');
     const pdfExportComponent = React.useRef(null);
     const exportPDF = () => {
         if (pdfExportComponent.current) {

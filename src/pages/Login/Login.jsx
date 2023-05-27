@@ -5,10 +5,11 @@ import Navbar from '../Shared/Navbar';
 import { HeartIcon } from '@heroicons/react/24/solid';
 import { AuthContext } from '../../providers/AuthProvider';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import useTitle from '../../hooks/useTitle';
 
 const Login = () => {
+    useTitle('Login');
     const { signIn, googleSingIn, githubSignIn, setUser } = useContext(AuthContext);
-
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
     const navigate = useNavigate();

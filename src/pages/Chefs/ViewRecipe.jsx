@@ -5,7 +5,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useLoaderData } from 'react-router-dom';
 import Navbar from '../Shared/Navbar';
 import { RiHeartAddLine } from 'react-icons/ri';
-import { Link } from 'react-router-dom';
 import Footer from '../Shared/Footer';
 
 const ViewRecipe = () => {

@@ -5,9 +5,11 @@ import Footer from '../Shared/Footer';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { MdDarkMode, MdLightMode } from 'react-icons/md';
+import useTitle from '../../hooks/useTitle';
 
 const UserProfile = () => {
     const { user, userProfileUpdate, resetPassword } = useContext(AuthContext);
+    useTitle(user?.displayName);
     const emailRef = useRef();
     // console.log(user);
     const [hide, setHide] = useState(true);

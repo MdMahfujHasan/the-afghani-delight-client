@@ -6,10 +6,11 @@ import Navbar from '../Shared/Navbar';
 import { Link, useNavigate } from 'react-router-dom';
 import { HeartIcon } from '@heroicons/react/24/solid';
 import food from '../../assets/sign_up_food.jpg';
+import useTitle from '../../hooks/useTitle';
 
 const SignUp = () => {
+    useTitle('Sign Up');
     const { createUser, googleSingIn, githubSignIn, setUser } = useContext(AuthContext);
-
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
     const navigate = useNavigate();

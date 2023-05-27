@@ -6,6 +6,7 @@ const auth = getAuth(app);
 export const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
+    const [dark, setDark] = useState(false);
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
 
@@ -64,7 +65,9 @@ const AuthProvider = ({ children }) => {
         googleSingIn,
         githubSignIn,
         resetPassword,
-        userProfileUpdate
+        userProfileUpdate,
+        dark,
+        setDark
     }
     return (
         <AuthContext.Provider value={authInfo}>
