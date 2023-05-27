@@ -3,9 +3,10 @@ import { AiFillStar } from 'react-icons/ai';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { RiHeartAddLine } from 'react-icons/ri';
+import { Link } from 'react-router-dom';
 
 const Recipe = ({ recipe }) => {
-    const { name, img, description, ingredients, instruction, method, rating } = recipe;
+    const { id, name, img, description, ingredients, instruction, method, rating } = recipe;
     const [disable, setDisable] = useState(false);
     const handleFavourite = () => {
         setDisable(true);
@@ -14,18 +15,21 @@ const Recipe = ({ recipe }) => {
     }
     return (
         <div className="bg-base-100">
-            <figure><img className='w-96 h-96 rounded' src={img} alt="Food" /></figure>
-            <div className="card-body">
-                <h2 className="card-title text-5xl font-extralight text-teal-500">{name}</h2>
-                <div className='flex items-center text-2xl'>
+            <figure><img className='w-full h-80 rounded' src={img} alt="Food" /></figure>
+            <div className="card-body relative">
+                <h2 className="card-title text-3xl font-extralight text-teal-500">{name}</h2>
+                <div className='flex items-center text-xl'>
                     <span>{rating}</span>
                     <AiFillStar className='text-yellow-500' />
                 </div>
-                <p className='text-lg font-light'>{description}</p>
-                <p><button disabled={disable} onClick={handleFavourite} className='btn btn-error'>
-                    <RiHeartAddLine className='text-lg mr-1' />
-                    Favourite</button>
-                </p>
+                <p className='text-lg font-light mb-4'>{description}</p>
+                <div className='flex justify-between absolute bottom-0'>
+                    <Link className='mr-4'><button disabled={disable} onClick={handleFavourite} className='btn btn-error'>
+                        <RiHeartAddLine className='text-lg mr-1' />
+                        Favourite</button>
+                    </Link>
+                    <Link to={`/recipe/${id}`}><button className='btn btn-accent'>View Recipe</button></Link>
+                </div>
                 <ToastContainer
                     position="top-center"
                     autoClose={5000}
@@ -38,18 +42,6 @@ const Recipe = ({ recipe }) => {
                     pauseOnHover
                     theme="dark"
                 />
-                <ul>
-                    <span className='text-xl font-extrabold text-teal-500'>Ingredients:</span>
-                    {
-                        ingredients.map(ingredient => <li className='list-disc text-lg font-light'>{ingredient}</li>)
-                    }
-                </ul>
-                <p className='text-justify font-light text-lg'><span className='text-xl font-extrabold text-teal-500'>Instruction: </span>{instruction}</p>
-                <ul>
-                    {
-                        method.map(m => <b className='mr-2'>#{m}</b>)
-                    }
-                </ul>
             </div>
         </div>
     );
