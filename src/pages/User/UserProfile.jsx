@@ -17,12 +17,12 @@ const UserProfile = () => {
     return (
         <>
             <Navbar></Navbar>
-            <p className='text-center mt-12 mb-4'><button onClick={() => setHide(!hide)} className='btn btn-primary'>Edit Profile</button></p>
-            <div className='flex justify-center items-center gap-8'>
+            <p className='text-center mt-4 mb-4'><button onClick={() => setHide(!hide)} className='btn btn-primary btn-xs'>Edit Profile</button></p>
+            <div className='flex justify-center items-center gap-20'>
                 <div>
-                    <h3><b>Name:</b> {user?.displayName}</h3>
-                    <p><b>Email:</b> {user?.email}</p>
-                    <img className='my-3 w-48 h-48 rounded-full' src={user?.photoURL} alt="" />
+                    <h3 className='text-sm'><b>Name:</b> {user?.displayName}</h3>
+                    <p className='text-sm'><b>Email:</b> {user?.email}</p>
+                    <img className='my-3 w-40 h-40 rounded-full' src={user?.photoURL} alt="" />
                 </div>
 
                 <form onSubmit={handleUpdateProfile} className={hide ? `invisible` : `visible`}>
@@ -30,15 +30,15 @@ const UserProfile = () => {
                         <label className="label">
                             <span className="label-text">Name</span>
                         </label>
-                        <input type="text" name='name' placeholder="Enter Your Name" className="input input-bordered" />
+                        <input type="text" name='name' placeholder="Enter Your Name" className="input input-bordered input-sm w-full max-w-xs" />
                     </div>
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Photo URL</span>
                         </label>
-                        <input type="text" name='photo' placeholder="Enter Your Photo URL" className="input input-bordered" />
+                        <input type="text" name='photo' placeholder="Enter Your Photo URL" className="input input-bordered input-sm w-full max-w-xs" />
                     </div>
-                    <input className='btn btn-secondary mt-3' type="submit" value="Update" />
+                    <input className='btn btn-success btn-xs mt-3' type="submit" value="Update" />
                 </form>
             </div>
             <Footer></Footer>
